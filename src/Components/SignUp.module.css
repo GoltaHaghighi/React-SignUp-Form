@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    align-items: center;
+}
+.formContainer {
+    border: solid 1px silver;
+    width: fit-content;
+    padding: 50px;
+    margin: 50px;
+    border-radius: 10px;
+    height: fit-content;
+    background-color: #fff;
+}
+.header {
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 1.8em;
+    color: #ad02ad;
+}
+.formFields {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    height: 75px;
+}
+.formFields .label {
+    text-align: left;
+    margin-bottom: 5px;
+    color: rgb(185, 6, 221);
+    font-size: 0.9rem;
+}
+.formInput {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid silver;
+    transition: all 0.2s ease-in;
+}
+.uncompleted {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid red;
+    transition: all 0.2s ease-in;
+}
+.formInput:focus,
+.uncompleted:focus {
+    outline: none;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #ad02ad;
+}
+
+
+.formFields span {
+    height: 10px;
+    width: fit-content;
+    text-align: left;
+    margin-top: 5px;
+    color: red;
+    background-color: rgba(255,0,0,0.2);
+    font-size: 0.7rem;
+    line-height: 10px;
+    padding: 2px 3px;
+    border-radius: 3px;
+}
+.checkBoxContainer {
+    display: flex;
+    font-size: 0.85rem;
+    flex-direction: row !important;
+    align-items: center;
+    height: 20px !important;
+    text-align: center;
+}
+.formButton {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.formButton button{
+    background-color: #ad02ad;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-size: 0.87em;
+    font-weight: 500;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+}
+.formButton button:hover {
+    background-color: #e98fff;
+}
+.formButton a{
+    color: #ad02ad;
+    text-decoration: none;
+    transition: all 0.1 ease-in;
+    font-weight: 700;
+}
+.formFields:nth-child(6) label {
+    color: #e98fff;
+}
+
+@media (max-width: 440px) {
+    .formContainer{
+        padding: 20px;
+        margin: 50px 20px;
+        width: 90%;
+    }
+    .formInput{
+        width: 90%;
+    }
+    .uncompleted {
+        width: 90%;
+    }
+    
+}
