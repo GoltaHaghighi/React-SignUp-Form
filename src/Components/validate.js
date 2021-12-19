@@ -1,11 +1,7 @@
-export const validate = data => {
+export const validate = (data, type) => {
     const errors = {};
     ///empty string is false
-    if (!data.name.trim()) { //if data.name without spaces was empty
-        errors.name = "Username required";
-    } else {
-        delete errors.name;
-    }
+   
 
     if (!data.email) {  //if data.email was empty
         errors.email = "Email required";
@@ -24,19 +20,28 @@ export const validate = data => {
         delete errors.password;
     }
 
-    if (!data.confirmPass) {    //if data.confirmPass was empty
-        errors.confirmPass = "Confirm the password";
-    } else if (data.password !== data.confirmPass) {
-        errors.confirmPass = "Those passwords didn’t match";
-    }
-    else {
-        delete errors.confirmPass;
-    }
+    if (type === "Signup") {
 
-    if (data.isAccepted) {  //if checkbox is checked
-        delete errors.isAccepted;
-    } else {
-        errors.isAccepted = "Accept rules";
+        if (!data.name.trim()) { //if data.name without spaces was empty
+            errors.name = "Username required";
+        } else {
+            delete errors.name;
+        }
+        if (!data.confirmPass) {    //if data.confirmPass was empty
+            errors.confirmPass = "Confirm the password";
+        } else if (data.password !== data.confirmPass) {
+            errors.confirmPass = "Those passwords didn’t match";
+        }
+        else {
+            delete errors.confirmPass;
+        }
+    
+        if (data.isAccepted) {  //if checkbox is checked
+            delete errors.isAccepted;
+        } else {
+            errors.isAccepted = "Accept rules";
+        }
     }
     return errors;
+
 }
